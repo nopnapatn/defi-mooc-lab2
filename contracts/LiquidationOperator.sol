@@ -28,8 +28,6 @@ interface ILendingPool {
         bool receiveAToken
     ) external;
 
-    function getUserReserveData(address asset, address user) external;
-
     /**
      * Returns the user account data across all the reserves
      * @param user The address of the user
@@ -203,7 +201,7 @@ contract LiquidationOperator is IUniswapV2Callee {
         uniswapV2Pair_WETH_USDC = IUniswapV2Pair(uniswapV2Factory.getPair(address(WETH), address(USDC))); // Pool4
         uniswapV2Pair_USDC_WETH = IUniswapV2Pair(uniswapV2Factory.getPair(address(USDC), address(WETH))); // Pool5
         // debt_USDT = 2916378221684; //2916378.221684
-        debt_USDT = 8_128_956343;
+        debt_USDT = 8128956343;
 
         // END TODO
     }
