@@ -280,8 +280,7 @@ contract LiquidationOperator is IUniswapV2Callee {
         console.log("uniswapV2Pair(%s) : WBTC <> WETH", address(uniswapV2Pair_WBTC_WETH));
         console.log("Reserve WBTC : %s", reserve_WBTC_Pool2);
         console.log("Reserve WETH : %s", reserve_WETH_Pool2);
-        console.log("USDC Balance : %s", USDC.balanceOf(address(this)));
-        console.log("WETH Balance : %s", WETH.balanceOf(address(this)));
+        console.log("");
 
         // 2.1 liquidate the target user
 
@@ -296,7 +295,7 @@ contract LiquidationOperator is IUniswapV2Callee {
         );
         // uint collateral_WBTC = WBTC.balanceOf(address(this));
         uint collateral_WETH = WETH.balanceOf(address(this));
-        console.log("WETH Balance : %s", WETH.balanceOf(address(this)));
+        console.log("Balance WETH : %s", WETH.balanceOf(address(this)));
 
         // // 2.2 swap WBTC for other things or repay directly
 
@@ -316,8 +315,9 @@ contract LiquidationOperator is IUniswapV2Callee {
             reserve_WETH_Pool4,
             reserve_USDC_Pool4
         );
+
         WETH.transfer(address(uniswapV2Pair_WETH_USDC), repay_WETH);
-        console.log("WETH Balance After Repay : %s", WETH.balanceOf(address(this)));
+        console.log("Balance After Repay WETH : %s", WETH.balanceOf(address(this)));
         console.log("");
 
         // END TODO
