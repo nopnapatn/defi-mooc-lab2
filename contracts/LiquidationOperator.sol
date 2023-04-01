@@ -231,7 +231,7 @@ contract LiquidationOperator is IUniswapV2Callee {
             healthFactor
         ) = lendingPool.getUserAccountData(liquidationTarget);
 
-        require(healthFactor < (10 ** health_factor_decimals), "Cannot liquidate; health factor must be below 1" );
+        require(healthFactor < (10 ** health_factor_decimals), "Error health factor must be below 1" );
 
         // 2. call flash swap to liquidate the target user
         // based on https://etherscan.io/tx/0xac7df37a43fab1b130318bbb761861b8357650db2e2c6493b73d6da3d9581077
